@@ -6,7 +6,6 @@ import android.widget.Toast;
 import com.tixon.daggeractivitytests.R;
 import com.tixon.daggeractivitytests.app.IApp;
 import com.tixon.daggeractivitytests.base.BaseActivity;
-import com.tixon.daggeractivitytests.dagger.components.ITestScreensComponent;
 
 import javax.inject.Inject;
 
@@ -25,8 +24,9 @@ public class MainActivity extends BaseActivity implements IMainView {
     @Override
     public void setupComponent() {
         IApp app = (IApp) getApplication();
-        ITestScreensComponent component = (ITestScreensComponent) app.plusScreensComponent(this);
-        component.inject(this);
+        /*IScreensComponent component = app.plusScreensComponent(this);
+        component.inject(this);*/
+        app.plusScreensComponent(this).inject(this);
     }
 
     @Override

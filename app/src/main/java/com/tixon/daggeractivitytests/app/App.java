@@ -34,7 +34,7 @@ public class App extends Application implements IApp {
     @Override
     public IScreensComponent plusScreensComponent(IMainView view) {
         if(screensComponent == null) {
-            ((AppComponent) appComponent).plus(new ScreensModule(view));
+            screensComponent = ((AppComponent) appComponent).plus(new ScreensModule(view));
         }
         return screensComponent;
     }

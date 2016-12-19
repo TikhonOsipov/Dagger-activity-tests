@@ -36,7 +36,8 @@ public class TestApp extends Application implements IApp {
     @Override
     public IScreensComponent plusScreensComponent(IMainView view) {
         if(testScreensComponent == null) {
-            testScreensComponent = ((ITestAppComponent) appComponent).plus(new TestScreensModule(view));
+            testScreensComponent = ((ITestAppComponent) appComponent)
+                    .plus(new TestScreensModule(view));
         }
         return testScreensComponent;
     }
